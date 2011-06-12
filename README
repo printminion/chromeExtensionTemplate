@@ -1,0 +1,11 @@
+This is the template project for creating chrome extensions. With ant bult.xml you can minify and zip your extensions authomatically.
+
+0. Download Closure compiler from http://code.google.com/p/closure-compiler/downloads/list
+   http://closure-compiler.googlecode.com/files/compiler-latest.zip to ../build/compiler.jar
+1. Define your Vesion in build.xml
+2. Edit manifest.tpl.json
+3. Minify extension code with closure
+4. Archive the extension to the versioned zip archive
+
+Use the bug tracker for bug reporting: http://code.google.com/p/%PUT_PROJECT_ID_HERE%/issues/entry
+Add your translation here: http://www.getlocalization.com/%PUT_PROJECT_ID_HERE%

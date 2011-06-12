@@ -1,0 +1,11 @@
+{
+	"ext_name": {
+		"message": "Put your extensions name here"
+	},
+	"ext_description": {
+		"message": "Put your extensions description here."
+	},
+	"some_text": {
+		"message": "Some text"
+	}
+}

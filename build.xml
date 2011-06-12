@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<project name="blogmark" default="createextension">
+	<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask" classpath="../build/compiler.jar" />
+
+	<!-- put your version here -->
+	<property name="VERSION" value="0.0.1" />
+
+	<target name="createextension" depends="closure" description="Assemble the final build extension.zip">
+		<zip destfile="extension_v${VERSION}.zip">
+			<zipfileset dir="." includes="extension/**" excludes="extension/manifest.tpl.json,extension/js/chromeExtensionsCode.js" />
+		</zip>
+	</target>
+
+	<target name="templates" description="Generate files from templates.">
+		<copy file="extension/manifest.tpl.json" tofile="extension/manifest.json" overwrite="true">
+			<filterchain>
+				<replacetokens>
+					<token key="VERSION" value="${VERSION}" />
+				</replacetokens>
+			</filterchain>
+		</copy>
+	</target>
+
+
+	<target name="closure" depends="templates" description="Minify javascripts with closure">
+
+		<jscomp compilationLevel="simple" warning="default" debug="false" output="extension/js/chromeExtensionsCode.min.js">
+
+			<sources dir="${basedir}/extension/js">
+				<file name="chromeExtensionsCode.js" />
+			</sources>
+
+		</jscomp>
+
+	</target>
+
+
+</project>
