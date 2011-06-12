@@ -12,7 +12,7 @@
 	},
 	"background_page": "background.html",
 	"permissions": [
-		"tabs", "management"
+		"tabs"
 	],
 	"browser_action": {
     	"default_icon": "images/icon19.png"
