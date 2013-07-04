@@ -1,20 +1,24 @@
 {
 	"name": "__MSG_ext_name__",
 	"version": "0.0.1",
+	"manifest_version": 2,
 	"description": "__MSG_ext_description__",
 	"default_locale": "en",
 	"icons": {
 		"256": "images/icon256.png",
 		"128": "images/icon128.png",
-		"64": "images/icon64.png",	
+		"64": "images/icon64.png",
 		"24": "images/icon24.png",
 		"19": "images/icon19.png"
 	},
-	"background_page": "background.html",
+	"background": {
+	         "page": "background.html"
+	         },
 	"permissions": [
 		"tabs"
 	],
 	"browser_action": {
     	"default_icon": "images/icon19.png"
-  	}
+  	},
+  	 "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }

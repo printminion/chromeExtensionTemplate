@@ -8,7 +8,7 @@
 
 	<target name="createextension" depends="closure" description="Assemble the final build extension.zip">
 		<zip destfile="extension_v${VERSION}.zip">
-			<zipfileset dir="." includes="extension/**" excludes="extension/manifest.tpl.json,extension/js/chromeExtensionsCode.js" />
+			<zipfileset dir="." includes="extension/**" excludes="extension/manifest.tpl.json,extension/js/chromeExtensionsCode.js,extension/.settings/*,extension/.project" />
 		</zip>
 	</target>
 
